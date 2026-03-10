@@ -47,37 +47,37 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/80 to-black/80" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 lg:py-40 text-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="flex justify-center mb-4 sm:mb-6" variants={itemVariants}>
+          <motion.div className="flex justify-center mb-4 sm:mb-6 md:mb-8" variants={itemVariants}>
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Truck size={32} className="sm:w-10 sm:h-10 md:w-12 md:h-12 text-blue-400" />
+              <Truck size={32} className="sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 text-blue-400" />
             </motion.div>
           </motion.div>
 
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 sm:mb-6 md:mb-8 leading-tight"
             variants={itemVariants}
           >
             Akash Translines
           </motion.h1>
 
           <motion.p
-            className="text-base sm:text-lg md:text-2xl text-blue-300 font-semibold mb-3 sm:mb-4"
+            className="text-base sm:text-lg md:text-2xl lg:text-3xl text-blue-300 font-semibold mb-3 sm:mb-4 md:mb-6"
             variants={itemVariants}
           >
             Fleet Owners & Transport Contractors
           </motion.p>
 
           <motion.p
-            className="text-sm sm:text-base md:text-xl text-gray-200 max-w-3xl mx-auto mb-6 sm:mb-10 leading-relaxed px-2"
+            className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto mb-6 sm:mb-10 md:mb-12 leading-relaxed px-2"
             variants={itemVariants}
           >
             Delivering reliable transportation solutions across India with a
@@ -87,32 +87,32 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-center items-center px-2 flex-wrap"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-6 justify-center items-center px-2 flex-wrap"
             variants={itemVariants}
           >
             <motion.a
               href="tel:9632937999"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 sm:px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-xl transition-all"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 sm:px-8 md:px-10 lg:px-12 py-3 md:py-4 lg:py-4 rounded-xl text-base sm:text-lg md:text-lg lg:text-xl font-semibold shadow-xl transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Phone size={18} />
+              <Phone size={18} className="md:w-5 md:h-5 lg:w-6 lg:h-6" />
               Call: 9632937999
             </motion.a>
 
             <motion.a
               href="tel:7090030800"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 px-6 sm:px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-xl transition-all"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 px-6 sm:px-8 md:px-10 lg:px-12 py-3 md:py-4 lg:py-4 rounded-xl text-base sm:text-lg md:text-lg lg:text-xl font-semibold shadow-xl transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Phone size={18} />
+              <Phone size={18} className="md:w-5 md:h-5 lg:w-6 lg:h-6" />
               Call: 7090030800
             </motion.a>
 
             <motion.button
               onClick={scrollToContact}
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-blue-900 hover:bg-gray-100 px-6 sm:px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-xl transition-all"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-blue-900 hover:bg-gray-100 px-6 sm:px-8 md:px-10 lg:px-12 py-3 md:py-4 lg:py-4 rounded-xl text-base sm:text-lg md:text-lg lg:text-xl font-semibold shadow-xl transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -123,11 +123,11 @@ export default function Hero() {
               href="https://wa.me/919632937999"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 px-6 sm:px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-xl transition-all"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 px-6 sm:px-8 md:px-10 lg:px-12 py-3 md:py-4 lg:py-4 rounded-xl text-base sm:text-lg md:text-lg lg:text-xl font-semibold shadow-xl transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <MessageCircle size={18} />
+              <MessageCircle size={18} className="md:w-5 md:h-5 lg:w-6 lg:h-6" />
               WhatsApp
             </motion.a>
           </motion.div>
