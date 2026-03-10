@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { useState, FormEvent } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -19,79 +20,153 @@ export default function Contact() {
     }, 3000);
   };
 
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: 'Phone',
+      content: '9632937999',
+      link: 'tel:9632937999',
+      bgColor: 'bg-blue-100',
+      iconColor: 'text-blue-600'
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      content: 'akashtranslines189@gmail.com',
+      link: 'mailto:akashtranslines189@gmail.com',
+      bgColor: 'bg-blue-100',
+      iconColor: 'text-blue-600'
+    },
+    {
+      icon: MapPin,
+      title: 'Office Address',
+      content: '#216 \'A\', 2nd Floor, 4th Main Road, 2nd Block, Nandini Layout, Bangalore – 560096',
+      link: null,
+      bgColor: 'bg-blue-100',
+      iconColor: 'text-blue-600'
+    },
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp',
+      content: 'Chat with us on WhatsApp',
+      link: 'https://wa.me/919632937999',
+      bgColor: 'bg-green-100',
+      iconColor: 'text-green-600'
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+        <motion.div
+          className="text-center mb-12 sm:mb-14 md:mb-16"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Contact Us
+          </motion.h2>
+          <motion.div
+            className="w-16 sm:w-20 md:w-24 h-1 bg-blue-600 mx-auto mb-3 sm:mb-4"
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          ></motion.div>
+          <p className="text-base sm:text-lg md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
             Get in touch with us for all your transportation needs
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2"
+          >
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
 
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Phone className="text-blue-600" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                  <a href="tel:9632937999" className="text-blue-600 hover:text-blue-700 text-lg">
-                    9632937999
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Mail className="text-blue-600" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                  <a href="mailto:akashtranslines189@gmail.com" className="text-blue-600 hover:text-blue-700 break-all">
-                    akashtranslines189@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <MapPin className="text-blue-600" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Office Address</h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    #216 'A', 2nd Floor, 4th Main Road,<br />
-                    2nd Block, Nandini Layout,<br />
-                    Bangalore – 560096
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-green-100 p-3 rounded-lg">
-                  <MessageCircle className="text-green-600" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">WhatsApp</h4>
-                  <a
-                    href="https://wa.me/919632937999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-600 hover:text-green-700 text-lg"
+            <motion.div className="space-y-6 mb-8" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              {contactInfo.map((info, index) => {
+                const IconComponent = info.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    className="flex items-start gap-4"
+                    variants={itemVariants}
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    Chat with us on WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
+                    <motion.div
+                      className={`${info.bgColor} p-3 rounded-lg hover:scale-110 transition-transform cursor-pointer flex-shrink-0`}
+                      whileHover={{ rotate: 10 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <IconComponent className={info.iconColor} size={24} />
+                    </motion.div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">{info.title}</h4>
+                      {info.link ? (
+                        info.link.startsWith('https') ? (
+                          <a
+                            href={info.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`${info.iconColor} hover:underline break-all text-sm sm:text-lg`}
+                          >
+                            {info.content}
+                          </a>
+                        ) : (
+                          <a href={info.link} className={`${info.iconColor} hover:underline text-sm sm:text-lg`}>
+                            {info.content}
+                          </a>
+                        )
+                      ) : (
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{info.content}</p>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
 
-            <div className="bg-gray-100 rounded-lg overflow-hidden h-64">
+            <motion.div
+              className="bg-gray-100 rounded-lg overflow-hidden h-48 sm:h-56 md:h-64"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6156877419!2d77.52867231482246!3d13.00995199083758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d6411bfffff%3A0x1d6e9c8c0a9a7e3e!2sNandini%20Layout%2C%20Bengaluru%2C%20Karnataka%20560096!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                 width="100%"
@@ -101,86 +176,108 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2"
+          >
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+            <motion.form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <motion.div variants={itemVariants}>
+                <label htmlFor="name" className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">
                   Full Name *
                 </label>
-                <input
+                <motion.input
                   type="text"
                   id="name"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm sm:text-base"
                   placeholder="Enter your name"
+                  whileFocus={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
                 />
-              </div>
+              </motion.div>
 
-              <div>
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+              <motion.div variants={itemVariants}>
+                <label htmlFor="email" className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">
                   Email Address *
                 </label>
-                <input
+                <motion.input
                   type="email"
                   id="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm sm:text-base"
                   placeholder="Enter your email"
+                  whileFocus={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
                 />
-              </div>
+              </motion.div>
 
-              <div>
-                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+              <motion.div variants={itemVariants}>
+                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">
                   Phone Number *
                 </label>
-                <input
+                <motion.input
                   type="tel"
                   id="phone"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm sm:text-base"
                   placeholder="Enter your phone number"
+                  whileFocus={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
                 />
-              </div>
+              </motion.div>
 
-              <div>
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+              <motion.div variants={itemVariants}>
+                <label htmlFor="message" className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">
                   Message *
                 </label>
-                <textarea
+                <motion.textarea
                   id="message"
                   required
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all resize-none text-sm sm:text-base"
                   placeholder="Tell us about your requirements"
-                ></textarea>
-              </div>
+                  whileFocus={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                ></motion.textarea>
+              </motion.div>
 
               {submitted && (
-                <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+                <motion.div
+                  className="bg-green-50 border border-green-200 text-green-800 px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-sm sm:text-base"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                >
                   Thank you for contacting us! We will get back to you soon.
-                </div>
+                </motion.div>
               )}
 
-              <button
+              <motion.button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
+                className="w-full bg-blue-600 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-sm sm:text-lg"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                variants={itemVariants}
               >
                 Send Message
-              </button>
-            </form>
-          </div>
+              </motion.button>
+            </motion.form>
+          </motion.div>
         </div>
       </div>
     </section>
