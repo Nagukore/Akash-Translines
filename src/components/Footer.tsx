@@ -146,9 +146,14 @@ export default function Footer() {
                 transition={{ duration: 0.2 }}
               >
                 <Phone size={18} className="mt-1 flex-shrink-0 group-hover:text-blue-400 transition-colors" />
-                <a href="tel:9632937999" className="hover:text-white transition-colors group-hover:text-blue-400">
-                  9632937999
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:9632937999" className="hover:text-white transition-colors group-hover:text-blue-400">
+                    9632937999
+                  </a>
+                  <a href="tel:7090030800" className="hover:text-white transition-colors group-hover:text-blue-400">
+                    7090030800
+                  </a>
+                </div>
               </motion.li>
               <motion.li
                 className="flex items-start gap-2 text-gray-400 group text-sm sm:text-base"

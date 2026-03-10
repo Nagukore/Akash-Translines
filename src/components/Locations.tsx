@@ -127,22 +127,32 @@ export default function Locations() {
         </div>
 
         <motion.div
-          className="mt-12 text-center"
+          className="mt-12 text-center flex flex-col sm:flex-row gap-4 justify-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-lg text-gray-700 mb-4">
-            Need transportation services in your area?
-          </p>
+          <div>
+            <p className="text-lg text-gray-700 mb-4">
+              Need transportation services in your area?
+            </p>
+          </div>
           <motion.a
             href="tel:9632937999"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
+            className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contact Us Now
+            Call: 9632937999
+          </motion.a>
+          <motion.a
+            href="tel:7090030800"
+            className="inline-flex items-center justify-center gap-2 bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors text-lg font-semibold"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Call: 7090030800
           </motion.a>
         </motion.div>
       </div>

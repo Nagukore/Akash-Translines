@@ -87,7 +87,7 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-center items-center px-2"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-center items-center px-2 flex-wrap"
             variants={itemVariants}
           >
             <motion.a
@@ -97,7 +97,17 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               <Phone size={18} />
-              Call Now
+              Call: 9632937999
+            </motion.a>
+
+            <motion.a
+              href="tel:7090030800"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 px-6 sm:px-8 py-3 rounded-xl text-base sm:text-lg font-semibold shadow-xl transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Phone size={18} />
+              Call: 7090030800
             </motion.a>
 
             <motion.button

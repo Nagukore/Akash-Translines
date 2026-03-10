@@ -24,7 +24,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Phone',
-      content: '9632937999',
+      content: '9632937999 / 7090030800',
       link: 'tel:9632937999',
       bgColor: 'bg-blue-100',
       iconColor: 'text-blue-600'

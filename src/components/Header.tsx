@@ -80,7 +80,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
           >
             <Phone size={16} />
-            <span className="hidden lg:inline">Call Now</span>
+            <span className="hidden lg:inline">Call: 9632937999</span>
           </motion.a>
 
           <motion.button
@@ -139,7 +139,20 @@ export default function Header() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Phone size={18} />
-                Call Now
+                9632937999
+              </motion.a>
+              <motion.a
+                href="tel:7090030800"
+                className="flex items-center justify-center gap-2 bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium"
+                custom={navItems.length + 1}
+                variants={itemVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Phone size={18} />
+                7090030800
               </motion.a>
             </div>
           </motion.div>
