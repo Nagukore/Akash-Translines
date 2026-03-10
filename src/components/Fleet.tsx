@@ -18,7 +18,7 @@ export default function Fleet() {
       description: 'Comfortable tempo travellers for group travel and tours'
     },
     {
-      name: 'Tourist Buses',
+      name: 'Tourist-Buses',
       image: '/tourist-bus.jpg',
       description: 'Modern tourist buses with comfortable seating and amenities'
     }
