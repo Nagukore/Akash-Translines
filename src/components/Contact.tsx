@@ -41,7 +41,7 @@ export default function Contact() {
       icon: MapPin,
       title: 'Office Address',
       content: '#216 \'A\', 2nd Floor, 4th Main Road, 2nd Block, Nandini Layout, Bangalore – 560096',
-      link: null,
+      link: 'https://maps.app.goo.gl/g84NuSxzgq5PNiMP9',
       bgColor: 'bg-blue-100',
       iconColor: 'text-blue-600'
     },
